@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Interrail Travel Guide — A(S)</title>
+  <link rel="icon" type="image/png" href="img/favicon.png" />
+  <link rel="stylesheet" href="style.css" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <!-- Header: Projects activo en negro y A(S) en azul -->
+  <header class="site-header" id="site-header">
+    <nav class="nav-center" aria-label="Main Navigation">
+      <a href="projects.html" class="nav-link nav-active" aria-current="page">Projects</a>
+      <a href="index.html" class="brand-logo brand-subpage" aria-label="Go to Home">A(S)</a>
+      <a href="about.html" class="nav-link">About</a>
+    </nav>
+  </header>
+
+  <main id="main-content">
+
+    <article class="project-case-study" aria-label="Interrail Travel Guide Project Case Study">
+
+      <!-- Encabezado centrado -->
+      <header class="project-header-block text-center">
+        <h1 class="project-detail-title">Interrail Travel Guide</h1>
+        <p class="project-year">2026</p>
+        <p class="project-category">Personal Project</p>
+      </header>
+
+      <!-- 1. Hero panorámico: Guía de Berlín abierta -->
+      <div class="project-full-row">
+        <div class="project-image-box">
+          <img src="img/interrail/interrail.jpg" alt="Unfolded Berlin travel guide page layout" loading="lazy" />
+        </div>
+      </div>
+
+      <!-- 2. Bloque: Texto descriptivo a la izquierda + Portadas en abanico a la derecha -->
+      <div class="project-split-row">
+        <div class="split-col">
+          <p class="project-text">
+            During a summer Interrail trip with friends, I designed a collection of personalized travel guides, one for each country we visited. Since each of us planned a different destination, I created a shared template to ensure all guides looked consistent.
+          </p>
+          <p class="project-text">
+            The foldable design allowed for compact storage and easy unfolding to reveal a map, daily plans, and key information.
+          </p>
+          <p class="project-text">
+            I digitized the layout using Canva, creating an accessible system so everyone could input their own content. Once finished, I printed each guide in a different color to distinguish the countries while keeping a strong, unified visual style.
+          </p>
+        </div>
+
+        <div class="split-col">
+          <div class="project-image-box">
+            <img src="img/interrail/interrail-cover.jpg" alt="Collection of colorful Interrail pocket guides fanned out" loading="lazy" />
+          </div>
+        </div>
+      </div>
+
+      <!-- 3. Composición con las 4 vistas plegadas -->
+      <div class="project-full-row">
+        <div class="project-image-box">
+          <img src="img/interrail/interrail-folded.jpg" alt="Folded guide modules showing front covers, typography and schedules" loading="lazy" />
+        </div>
+      </div>
+
+      <!-- 4. A4 abierto: Cara frontal -->
+      <div class="project-full-row">
+        <div class="project-image-box">
+          <img src="img/interrail/interrail-front.jpg" alt="Front side of the unfolded A4 travel guide" loading="lazy" />
+        </div>
+      </div>
+
+      <!-- 5. A4 abierto: Cara posterior (debajo de la frontal) -->
+      <div class="project-full-row">
+        <div class="project-image-box">
+          <img src="img/interrail/interrail-back.jpg" alt="Back side of the unfolded A4 travel guide with map and personal notes" loading="lazy" />
+        </div>
+      </div>
+
+      <!-- Enlace al siguiente proyecto -->
+      <div class="next-project-container">
+        <a href="the-archive.html" class="next-project-link">&rarr; See next project...</a>
+      </div>
+
+    </article>
+
+  </main>
+
+  <!-- Footer (#E8EDFF) -->
+  <footer class="site-footer">
+    <div class="footer-spacer-top"></div>
+    <div class="footer-inner">
+      <span class="footer-role">Design Student</span>
+      <span class="footer-logo">A(S)</span>
+      <a href="https://instagram.com/alice_.dsg" target="_blank" rel="noopener noreferrer" class="footer-social">
+        @alice_.dsg
+      </a>
+    </div>
+    <div class="footer-spacer-bottom"></div>
+  </footer>
+
+  <script>
+    let lastScrollY = window.pageYOffset;
+    const header = document.getElementById('site-header');
+
+    window.addEventListener('scroll', () => {
+      const currentScrollY = window.pageYOffset;
+      if (currentScrollY <= 80) {
+        header.classList.remove('nav-hidden');
+      } else if (currentScrollY > lastScrollY) {
+        header.classList.add('nav-hidden');
+      } else {
+        header.classList.remove('nav-hidden');
+      }
+      lastScrollY = currentScrollY;
+    });
+  </script>
+
+</body>
+</html>

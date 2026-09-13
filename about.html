@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About — A(S)</title>
+  <link rel="icon" type="image/png" href="img/favicon.png" />
+  <link rel="stylesheet" href="style.css" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <!-- Header: About activo (negro) y A(S) en color azul suave -->
+  <header class="site-header" id="site-header">
+    <nav class="nav-center" aria-label="Main Navigation">
+      <a href="projects.html" class="nav-link">Projects</a>
+      <a href="index.html" class="brand-logo brand-subpage" aria-label="Go to Home">A(S)</a>
+      <a href="about.html" class="nav-link nav-active" aria-current="page">About</a>
+    </nav>
+  </header>
+
+  <main id="main-content">
+    <section class="about-container" aria-label="About Alice Spanninga">
+
+      <!-- Columna izquierda: Texto y enlaces -->
+      <div class="about-text-col">
+        
+        <!-- Bloque 1: Saludo e introducción -->
+        <div class="about-intro-block">
+          <h1 class="about-greeting">Hi!</h1>
+          <p class="about-lead">
+            My name is Alice Spanninga, I'm studying design at the University of Barcelona.
+          </p>
+        </div>
+
+        <!-- Bloque 2: Resto de la biografía y enlaces -->
+        <div class="about-rest-block">
+          <div class="about-bio">
+            <p>
+              I'm currently in my third year of the degree. And I love industrial design, graphic design, and craftsmanship. I'm constantly exploring how creativity can connect with functionality.
+            </p>
+            <p>
+              I created this place to save and share my projects in a personal way, outside of social media and with my own rules.
+            </p>
+            <p>
+              In this website you can see some of my favorite works, there are university, competition and personal projects.
+            </p>
+          </div>
+
+          <!-- Enlaces -->
+           <br>
+           <p>
+            And here you can find me in other places on the internet, where I share my work and my thoughts:
+           </p>
+          <ul class="about-links" aria-label="Contact and Social links">
+            <li>
+              <span class="link-label">Instagram:</span>
+              <a href="https://instagram.com/alice_.dsg" target="_blank" rel="noopener noreferrer">@alice_.dsg</a>
+            </li>
+            <li>
+              <span class="link-label">Behance:</span>
+              <a href="https://www.behance.net/alicespanninga" target="_blank" rel="noopener noreferrer">Alice Spanninga</a>
+            </li>
+            <li>
+              <span class="link-label">Substack:</span>
+              <a href="https://substack.com/@alicespanninga" target="_blank" rel="noopener noreferrer">@alicespanninga</a>
+            </li>
+            <li>
+              <span class="link-label">Pinterest:</span>
+              <a href="https://pin.it/3tM5AaxpU" target="_blank" rel="noopener noreferrer">@aspanfort</a>
+            </li>
+            <li>
+              <span class="link-label">Email:</span>
+              <button type="button" class="copy-email-btn" id="copyEmailBtn" aria-label="Copy email address" title="Click to copy">
+                <span id="emailText">aspanfort@gmail.com</span>
+                <span id="copyNotice" class="copy-badge" aria-live="polite"></span>
+              </button>
+            </li>
+          </ul>
+
+          <p class="about-update">Final update August 2026</p>
+        </div>
+
+      </div>
+
+      <!-- Columna derecha: Foto -->
+      <div class="about-image-col">
+        <div class="about-card-frame">
+          <img src="img/projects-about/About-Alice.jpg" alt="Alice Spanninga in the mountains" />
+        </div>
+      </div>
+
+      <!-- Centrado global absoluto a todo el ancho (debajo de las 2 columnas en PC) -->
+      <div class="about-cta-wrapper">
+        <a href="projects.html" class="about-cta-link">See my projects</a>
+      </div>
+
+    </section>
+    
+
+
+  </main>
+
+  <!-- Footer (#E8EDFF) -->
+  <footer class="site-footer">
+    <div class="footer-spacer-top"></div>
+    <div class="footer-inner">
+      <span class="footer-role">Design Student</span>
+      <span class="footer-logo">A(S)</span>
+      <a href="https://instagram.com/alice_.dsg" target="_blank" rel="noopener noreferrer" class="footer-social">
+        @alice_.dsg
+      </a>
+    </div>
+    <div class="footer-spacer-bottom"></div>
+  </footer>
+
+  <script>
+    // Header dinámico
+    let lastScrollY = window.pageYOffset;
+    const header = document.getElementById('site-header');
+
+    window.addEventListener('scroll', () => {
+      const currentScrollY = window.pageYOffset;
+      if (currentScrollY <= 80) {
+        header.classList.remove('nav-hidden');
+      } else if (currentScrollY > lastScrollY) {
+        header.classList.add('nav-hidden');
+      } else {
+        header.classList.remove('nav-hidden');
+      }
+      lastScrollY = currentScrollY;
+    });
+
+    // Copiar email al portapapeles
+    const emailBtn = document.getElementById('copyEmailBtn');
+    const emailText = document.getElementById('emailText');
+    const notice = document.getElementById('copyNotice');
+
+    emailBtn.addEventListener('click', () => {
+      const email = 'aspanfort@gmail.com';
+      navigator.clipboard.writeText(email).then(() => {
+        notice.textContent = '(Copied!)';
+        notice.classList.add('visible');
+        setTimeout(() => {
+          notice.classList.remove('visible');
+          notice.textContent = '';
+        }, 2200);
+      });
+    });
+  </script>
+
+</body>
+</html>

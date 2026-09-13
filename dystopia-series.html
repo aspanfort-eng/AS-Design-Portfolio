@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Dystopia Series: Cover Book Design — A(S)</title>
+  <link rel="icon" type="image/png" href="img/favicon.png" />
+  <link rel="stylesheet" href="style.css" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <!-- Header -->
+  <header class="site-header" id="site-header">
+    <nav class="nav-center" aria-label="Main Navigation">
+      <a href="projects.html" class="nav-link nav-active" aria-current="page">Projects</a>
+      <a href="index.html" class="brand-logo brand-subpage" aria-label="Go to Home">A(S)</a>
+      <a href="about.html" class="nav-link">About</a>
+    </nav>
+  </header>
+
+  <main id="main-content">
+
+    <article class="project-case-study" aria-label="The Dystopia Series Project Case Study">
+
+      <!-- Encabezado centrado -->
+      <header class="project-header-block text-center">
+        <h1 class="project-detail-title">The Dystopia Series:<br />Cover Book Design</h1>
+        <p class="project-year">2026</p>
+        <p class="project-category">University Project</p>
+      </header>
+
+      <!-- 1. Imagen principal: Los tres libros apilados uno sobre otro -->
+      <div class="project-full-row">
+        <div class="project-image-box">
+          <img src="img/dystopia/dystopia-hero.jpg" alt="The three dystopian classics stacked together" loading="lazy" />
+        </div>
+      </div>
+
+      <!-- 2. Bloque: Texto conceptual a la izquierda + Fahrenheit a la derecha -->
+      <div class="project-split-row">
+        <div class="split-col">
+          <p class="project-text">
+            For this editorial project, the goal was to design a unified book collection featuring classic dystopian literature: Fahrenheit 451 (Narrative), R.U.R. (Theatre), and Aniara (Poetry).
+          </p>
+          <p class="project-text">
+            The main challenge was establishing a visual system with three levels of differentiation: the books had to look like a cohesive collection, clearly distinguish their literary genres, and retain their individual identity as unique titles.
+          </p>
+          <p class="project-text">
+            I used blurred, two-color gradient backgrounds as a visual metaphor for the distorted and unsettling realities portrayed in dystopian worlds.
+          </p>
+        </div>
+
+        <div class="split-col">
+          <div class="project-image-box">
+            <img src="img/dystopia/dystopia-farenheit.jpg" alt="Fahrenheit 451 cover book design by Ray Bradbury" loading="lazy" />
+          </div>
+        </div>
+      </div>
+
+      <!-- 3. Fila dividida en 2: Los otros dos libros (Aniara + R.U.R.) -->
+      <div class="project-split-row">
+        <div class="split-col">
+          <div class="project-image-box">
+            <img src="img/dystopia/dystopia-aniara.jpg" alt="Aniara cover book design by Harry Martinson" loading="lazy" />
+          </div>
+        </div>
+        <div class="split-col">
+          <div class="project-image-box">
+            <img src="img/dystopia/dystopia-rur.jpg" alt="R.U.R. cover book design by Karel Capek" loading="lazy" />
+          </div>
+        </div>
+      </div>
+
+      <!-- 4. Infografía completa del sistema de géneros y retícula -->
+      <div class="project-full-row">
+        <div class="project-image-box">
+          <img src="img/dystopia/dystopia-system.jpg" alt="Graphic rules and grid layouts for narrative, poetry and theatre editions" loading="lazy" />
+        </div>
+      </div>
+
+      <!-- 5. Bloque: Metodología a la izquierda + Interior maqueta a la derecha -->
+      <div class="project-split-row">
+        <div class="split-col">
+          <p class="project-text">
+            To differentiate the genres, I created a specific grid system with a unique graphic element for each.
+          </p>
+          <p class="project-text">
+            Finally, to give each book its own identity, I designed an illustration and selected a specific color palette that reflects the core theme of each story.
+          </p>
+          <p class="project-text">
+            I also designed the interior layout for the narrative book, prioritizing reading comfort and legibility.
+          </p>
+        </div>
+
+        <div class="split-col">
+          <div class="project-image-box">
+            <img src="img/dystopia/dystopia-interior-layout.jpg" alt="Fahrenheit 451 interior page layout spread" loading="lazy" />
+          </div>
+        </div>
+      </div>
+
+      <!-- 6. Primeras páginas interiores / guarda -->
+      <div class="project-full-row">
+        <div class="project-image-box">
+          <img src="img/dystopia/dystopia-first-pages.jpg" alt="First pages and title leaf detail of Fahrenheit 451" loading="lazy" />
+        </div>
+      </div>
+
+      <!-- 7. Foto final en la playa -->
+      <div class="project-full-row">
+        <div class="project-image-box">
+          <img src="img/dystopia/dystopia-beach.jpg" alt="Fahrenheit 451 book cover lying on a towel at the beach" loading="lazy" />
+        </div>
+      </div>
+
+      <!-- Enlace al siguiente proyecto -->
+      <div class="next-project-container">
+        <a href="ub-folder.html" class="next-project-link">&rarr; See next project...</a>
+      </div>
+
+    </article>
+
+  </main>
+
+  <!-- Footer (#E8EDFF) -->
+  <footer class="site-footer">
+    <div class="footer-spacer-top"></div>
+    <div class="footer-inner">
+      <span class="footer-role">Design Student</span>
+      <span class="footer-logo">A(S)</span>
+      <a href="https://instagram.com/alice_.dsg" target="_blank" rel="noopener noreferrer" class="footer-social">
+        @alice_.dsg
+      </a>
+    </div>
+    <div class="footer-spacer-bottom"></div>
+  </footer>
+
+  <script>
+    let lastScrollY = window.pageYOffset;
+    const header = document.getElementById('site-header');
+
+    window.addEventListener('scroll', () => {
+      const currentScrollY = window.pageYOffset;
+      if (currentScrollY <= 80) {
+        header.classList.remove('nav-hidden');
+      } else if (currentScrollY > lastScrollY) {
+        header.classList.add('nav-hidden');
+      } else {
+        header.classList.remove('nav-hidden');
+      }
+      lastScrollY = currentScrollY;
+    });
+  </script>
+
+</body>
+</html>

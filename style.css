@@ -1,0 +1,1096 @@
+/* --- RESET & VARIABLES --- */
+:root {
+  --bg-page: #dae2ff;         /* Fondo web y cabecera */
+  --bg-footer: #e8edff;       /* Fondo solicitado para el footer */
+  --nav-purple: #8592e0;      /* Tono para Projects y About */
+  --text-main: #141414;
+  --text-muted: #494c53;
+  --radius-card: 20px;
+  --gap-cards: 14px;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background-color: var(--bg-page);
+  color: var(--text-main);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Skip link accesibilidad */
+.skip-link {
+  position: absolute;
+  top: -60px;
+  left: 20px;
+  background: var(--text-main);
+  color: #fff;
+  padding: 10px 18px;
+  z-index: 2000;
+  text-decoration: none;
+  border-radius: 6px;
+  font-weight: 400;
+}
+.skip-link:focus {
+  top: 15px;
+}
+
+a:focus-visible {
+  outline: 2px solid var(--nav-purple);
+  outline-offset: 4px;
+}
+
+/* --- HEADER DINÁMICO --- */
+.site-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background-color: var(--bg-page);
+  padding: 2.2rem 2rem;
+  transition: transform 0.3s ease;
+}
+
+.site-header.nav-hidden {
+  transform: translateY(-100%);
+}
+
+.nav-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 4.5rem;
+  max-width: 650px;
+  margin: 0 auto;
+}
+
+.nav-link {
+  font-size: 1.15rem;
+  font-weight: 400;
+  color: var(--nav-purple);
+  text-decoration: none;
+  transition: opacity 0.2s ease;
+}
+
+.nav-link:hover {
+  opacity: 0.7;
+}
+
+.brand-logo {
+  font-size: 1.25rem;
+  font-weight: 500;
+  color: var(--text-main);
+  text-decoration: none;
+  letter-spacing: -0.3px;
+}
+
+/* Estado activo en sección Projects */
+.nav-link.nav-active {
+  color: var(--text-main);
+  font-weight: 500;
+}
+
+.brand-logo.brand-subpage {
+  color: var(--nav-purple);
+  font-weight: 400;
+}
+
+/* --- HERO (HOME) --- */
+.hero-section {
+  text-align: center;
+  padding-top: 9.5rem;
+  padding-bottom: 3.5rem;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+.hero-title {
+  font-size: clamp(2rem, 4vw, 2.5rem);
+  font-weight: 500;
+  letter-spacing: -0.4px;
+  margin-bottom: 0.8rem;
+}
+
+.hero-subtitle {
+  font-size: clamp(0.95rem, 1.8vw, 1.15rem);
+  color: var(--text-muted);
+  font-weight: 400;
+  line-height: 1.5;
+}
+/* --- MOSAICO EDITORIAL (HOME) - MEDIDAS EXACTAS DE FIGMA --- */
+:root {
+  --mosaic-max-w: 1120px; /* Ancho total exacto del contenido en Figma */
+  --gap-cards: 20px;       /* Separación exacta de 20px */
+  --radius-card: 20px;
+}
+
+.mosaic-container {
+  width: 90%;
+  max-width: var(--mosaic-max-w);
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap-cards);
+}
+
+.mosaic-row {
+  display: flex;
+  gap: var(--gap-cards);
+  width: 100%;
+  align-items: flex-start; /* Evita que Safari alargue las tarjetas */
+}
+
+.card-link {
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+  display: block;
+}
+
+.card {
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--radius-card);
+  background-color: var(--bg-page);
+}
+
+.card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  border-radius: var(--radius-card);
+  transition: transform 0.3s ease;
+}
+
+.card:hover img {
+  transform: scale(1.015);
+}
+
+/* --- FILA 1: Hush (550x621) & Post-Data (550x621) --- */
+.row-equal .card {
+  flex: 0 0 calc((100% - var(--gap-cards)) / 2); /* 550px */
+  aspect-ratio: 550 / 621;
+}
+
+/* --- FILA 2: Colillas texto (360x347) + Confusión (360x367) vs Fahrenheit (740x714) --- */
+.row-asymmetric-split {
+  display: flex;
+  gap: var(--gap-cards);
+  align-items: flex-start;
+}
+
+/* Columna izquierda de 360px (32.14% del total) */
+.col-stacked {
+  flex: 0 0 calc((360 / 1120) * (100% - var(--gap-cards)));
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap-cards);
+}
+
+.col-stacked .card:first-child {
+  aspect-ratio: 360 / 347;
+}
+
+.col-stacked .card:last-child {
+  aspect-ratio: 360 / 367;
+}
+
+/* Columna derecha de 740px (66.07% del total) */
+.col-single {
+  flex: 0 0 calc((740 / 1120) * (100% - var(--gap-cards)));
+}
+
+.col-single .card {
+  width: 100%;
+  aspect-ratio: 740 / 714;
+}
+
+/* --- FILA 3: Interrail Fan + Martino Gamper (Más apaisada, sin cortes) --- */
+.card-interrail-fan {
+  flex: 0 0 calc((740 / 1120) * (100% - var(--gap-cards)));
+  aspect-ratio: 16 / 10; /* Proporción más compacta para que respire */
+}
+
+.card-archive {
+  flex: 0 0 calc((360 / 1120) * (100% - var(--gap-cards)));
+  aspect-ratio: 360 / 460; /* Reduce la altura para que no corte Martino Gamper */
+}
+
+/* Ajuste específico para que Martino Gamper no corte el encabezado */
+.card-archive img {
+  object-fit: contain; /* Muestra el cartel completo con su marco azul sin rebanar */
+  background-color: #4f6396; /* Tono azul del marco en Figma de fondo */
+}
+
+/* --- FILA 4: Colillas cenicero (550x621) + Carpeta UB (550x621) --- */
+.card-colillas,
+.card-ubfolder {
+  flex: 0 0 calc((100% - var(--gap-cards)) / 2);
+  aspect-ratio: 550 / 621;
+}
+
+/* --- FILA 5: Print Experiments + Sant Pere Poster (Altura equilibrada) --- */
+.card-print-exp {
+  flex: 0 0 calc((360 / 1120) * (100% - var(--gap-cards)));
+  aspect-ratio: 360 / 410; /* Menos alargada verticalmente */
+}
+
+.card-santpere {
+  flex: 0 0 calc((740 / 1120) * (100% - var(--gap-cards)));
+  aspect-ratio: 16 / 9.2; /* Proporción apaisada natural para no cortar el cartel */
+}
+
+/* --- FILA 6: Interrail verde azul (740x714) vs Maqueta Hush (360x347) + Bolso (360x347) --- */
+.row-last-block {
+  display: flex;
+  gap: var(--gap-cards);
+  align-items: flex-start;
+}
+
+.col-interrail-wide {
+  flex: 0 0 calc((740 / 1120) * (100% - var(--gap-cards)));
+}
+
+.col-interrail-wide .card {
+  width: 100%;
+  aspect-ratio: 740 / 714;
+}
+
+.col-right-stacked {
+  flex: 0 0 calc((360 / 1120) * (100% - var(--gap-cards)));
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap-cards);
+}
+
+.col-right-stacked .card {
+  aspect-ratio: 360 / 347;
+}
+
+/* --- RESPONSIVE EN MÓVIL --- */
+@media (max-width: 768px) {
+  .mosaic-row,
+  .row-asymmetric-split,
+  .row-last-block {
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .card,
+  .col-stacked,
+  .col-single,
+  .col-interrail-wide,
+  .col-right-stacked,
+  .card-interrail-fan,
+  .card-archive,
+  .card-colillas,
+  .card-ubfolder,
+  .card-print-exp,
+  .card-santpere,
+  .row-equal .card {
+    flex: 1 1 100%;
+    width: 100%;
+    aspect-ratio: auto;
+    height: auto;
+  }
+}
+
+/* --- VIEW ALL PROJECTS --- */
+.view-all-wrapper {
+  text-align: center;
+  padding: 6.5rem 1rem 5rem;
+}
+
+.view-all-link {
+  font-size: 1.15rem;
+  font-weight: 400;
+  color: var(--text-main);
+  text-decoration: underline;
+  text-underline-offset: 6px;
+  transition: opacity 0.2s ease;
+}
+
+.view-all-link:hover {
+  opacity: 0.7;
+}
+
+/* --- FOOTER (#E8EDFF) --- */
+.site-footer {
+  background-color: var(--bg-footer);
+  padding: 0 2rem;
+  width: 100%;
+}
+
+.footer-spacer-top {
+  height: 160px;
+  width: 100%;
+}
+
+.footer-spacer-bottom {
+  height: 60px;
+  width: 100%;
+}
+
+.footer-inner {
+  max-width: 1260px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer-role {
+  font-weight: 300;
+  font-size: 1.15rem;
+  color: var(--text-main);
+}
+
+.footer-logo {
+  font-weight: 400;
+  font-size: 1.2rem;
+  color: var(--text-main);
+}
+
+.footer-social {
+  font-weight: 300;
+  font-size: 1.15rem;
+  color: var(--text-main);
+  text-decoration: none;
+}
+
+.footer-social:hover {
+  text-decoration: underline;
+}
+
+/* --- CATÁLOGO PROJECTS.HTML (PROPORCIÓN 720x824) --- */
+.projects-catalog-container {
+  width: 92%;
+  max-width: 1260px;
+  margin: 0 auto;
+  padding-top: 9.5rem;
+}
+
+.projects-catalog-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  column-gap: 24px;
+  row-gap: 48px;
+}
+
+.catalog-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.catalog-link {
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  flex-direction: column;
+}
+
+.catalog-item .card {
+  width: 100%;
+  aspect-ratio: 720 / 824;
+  border-radius: var(--radius-card);
+  overflow: hidden;
+  display: block;
+}
+
+.catalog-item .card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  border-radius: var(--radius-card);
+}
+
+.catalog-item:hover .card img {
+  transform: scale(1.02);
+}
+
+.catalog-title {
+  margin-top: 1.2rem;
+  font-size: 1.05rem;
+  font-weight: 400;
+  color: var(--text-main);
+  line-height: 1.35;
+  text-align: center;
+  width: 100%;
+}
+
+/* --- MOBILE RESPONSIVE --- */
+@media (max-width: 768px) {
+  .site-header {
+    padding: 1.5rem 1rem;
+  }
+
+  .nav-center {
+    gap: 2.5rem;
+  }
+
+  .mosaic-container,
+  .projects-catalog-container {
+    width: 94%;
+    padding-top: 7rem;
+  }
+
+  .mosaic-row,
+  .row-asymmetric-split,
+  .row-last-block {
+    flex-direction: column;
+    gap: var(--gap-cards);
+  }
+
+  .card-print-exp,
+  .card-santpere,
+  .card-interrail-fan,
+  .card-archive,
+  .card-colillas,
+  .card-ubfolder,
+  .col-stacked,
+  .col-single,
+  .col-interrail-wide,
+  .col-right-stacked,
+  .row-equal .card {
+    flex: 1 1 100%;
+    width: 100%;
+    aspect-ratio: auto;
+  }
+
+  .projects-catalog-grid {
+    grid-template-columns: 1fr;
+    row-gap: 32px;
+  }
+
+  .view-all-link,
+  .footer-role,
+  .footer-logo,
+  .footer-social {
+    font-size: 1rem;
+  }
+
+  .footer-spacer-top {
+    height: 80px;
+  }
+
+  .footer-spacer-bottom {
+    height: 35px;
+  }
+}
+
+/* --- SECCIÓN ABOUT ME (COMPOSICIÓN EXACTA FIGMA) --- */
+.about-container {
+  width: 90%;
+  max-width: 1120px;
+  margin: 0 auto;
+  padding-top: 9.5rem;
+  padding-bottom: 5rem;
+  display: flex;
+  flex-wrap: wrap; /* Permite que el enlace inferior salte a su propia fila */
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 40px;
+}
+
+/* Columna de texto a la izquierda */
+.about-text-col {
+  flex: 0 0 460px;
+  display: flex;
+  flex-direction: column;
+}
+
+.about-greeting {
+  font-size: clamp(2rem, 3.5vw, 2.5rem);
+  font-weight: 500;
+  margin-bottom: 1.4rem;
+  color: var(--text-main);
+}
+
+.about-bio p {
+  font-size: 1.05rem;
+  line-height: 1.55;
+  color: var(--text-main);
+  margin-bottom: 1.25rem;
+  font-weight: 400;
+}
+
+/* Lista de contacto y redes */
+.about-links {
+  list-style: none;
+  margin-top: 1.2rem;
+  margin-bottom: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+}
+
+.about-links li {
+  font-size: 1.05rem;
+  color: var(--text-main);
+  display: flex;
+  align-items: center;
+}
+
+.link-label {
+  font-weight: 400;
+  margin-right: 6px;
+}
+
+.about-links a {
+  color: var(--text-main);
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  transition: opacity 0.2s ease;
+}
+
+.about-links a:hover {
+  opacity: 0.7;
+}
+
+/* Botón interactivo para copiar Email */
+.copy-email-btn {
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+  font-family: inherit;
+  font-size: 1.05rem;
+  color: var(--text-main);
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: opacity 0.2s ease;
+}
+
+.copy-email-btn:hover {
+  opacity: 0.7;
+}
+
+.copy-badge {
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--nav-purple);
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.copy-badge.visible {
+  opacity: 1;
+}
+
+/* Fecha de actualización */
+.about-update {
+  font-size: 0.95rem;
+  font-weight: 300;
+  color: var(--text-muted);
+  margin-bottom: 1rem;
+}
+
+/* Enlace 'See my projects' centrado en la pantalla */
+.about-cta-wrapper {
+  flex: 0 0 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center; /* Centrado absoluto */
+  margin-top: 2rem;
+}
+
+.about-cta-link {
+  font-size: 1.15rem;
+  font-weight: 400;
+  color: var(--text-main);
+  text-decoration: underline;
+  text-underline-offset: 6px;
+  transition: opacity 0.2s ease;
+}
+
+.about-cta-link:hover {
+  opacity: 0.7;
+}
+
+/* Columna de imagen a la derecha */
+.about-image-col {
+  flex: 0 0 550px;
+}
+
+.about-card-frame {
+  width: 550px;
+  height: 612px;
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 58px;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.about-card-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  border-radius: calc(58px - 20px);
+}
+
+/* --- RESPONSIVE EN MÓVIL --- */
+@media (max-width: 992px) {
+  .about-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 32px;
+    padding-top: 7.5rem;
+  }
+
+  /* Desempaqueta la columna de texto para intercalar la foto */
+  .about-text-col {
+    display: contents;
+  }
+
+  /* 1. Saludo e introducción arriba */
+  .about-intro-block {
+    order: 1;
+    width: 100%;
+  }
+
+  /* 2. Foto en el medio */
+  .about-image-col {
+    order: 2;
+    flex: 0 0 auto;
+    width: 100%;
+    max-width: 480px;
+  }
+
+  .about-card-frame {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 550 / 612;
+    border-radius: 40px;
+    padding: 16px;
+  }
+
+  .about-card-frame img {
+    border-radius: 24px;
+  }
+
+  /* 3. Resto del texto debajo de la foto */
+  .about-rest-block {
+    order: 3;
+    width: 100%;
+  }
+
+  /* 4. 'See my projects' al final */
+  .about-cta-wrapper {
+    order: 4;
+    width: 100%;
+    margin-top: 1rem;
+  }
+}
+
+/* --- LAYOUT EDITORIAL DE CASO DE ESTUDIO (ESPACIADO EXACTO 20PX) --- */
+.project-case-study {
+  width: 90%;
+  max-width: 1120px;
+  margin: 0 auto;
+  padding-top: 9.5rem;
+  padding-bottom: 5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 20px; /* Separación vertical exacta de 20px entre filas */
+}
+
+/* Cabecera del caso de estudio centrada */
+.project-header-block.text-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.project-detail-title {
+  font-size: clamp(1.8rem, 2.5vw, 2.2rem);
+  font-weight: 500;
+  color: var(--text-main);
+  line-height: 1.25;
+  margin-bottom: 0.6rem;
+}
+
+.project-year {
+  font-size: 1.15rem;
+  font-weight: 400;
+  color: var(--text-main);
+  margin-bottom: 0.2rem;
+}
+
+.project-category {
+  font-size: 1.15rem;
+  font-weight: 400;
+  color: var(--text-main);
+}
+
+/* Contenedores de imagen */
+.project-full-row {
+  width: 100%;
+}
+
+.project-image-box {
+  width: 100%;
+  border-radius: var(--radius-card);
+  overflow: hidden;
+  background-color: var(--bg-page);
+}
+
+.project-image-box img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: var(--radius-card);
+}
+
+/* Filas divididas con gap exacto de 20px */
+.project-split-row {
+  display: flex;
+  gap: 20px; /* Separación horizontal exacta de 20px entre columnas */
+  width: 100%;
+  align-items: flex-start;
+}
+
+.split-col {
+  flex: 1 1 calc(50% - 10px);
+  display: flex;
+  flex-direction: column;
+  gap: 20px; /* Separación interna exacta de 20px */
+}
+
+.project-text {
+  font-size: 1.15rem;
+  line-height: 1.6;
+  color: var(--text-main);
+  font-weight: 400;
+}
+
+/* Utilidades para Hush */
+.flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.transparent-bg {
+  background-color: transparent;
+}
+
+/* Showcase digital (1/3 App y 2/3 Web con gap de 20px) */
+.hush-digital-showcase {
+  display: flex;
+  gap: 20px;
+  width: 100%;
+  margin-top: 0;
+  align-items: flex-start;
+}
+
+.digital-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.col-one-third {
+  flex: 0 0 calc(33.333% - (20px * 2 / 3)); /* 1/3 exacto */
+}
+
+.col-two-thirds {
+  flex: 0 0 calc(66.666% - (20px * 1 / 3)); /* 2/3 exacto */
+}
+
+.digital-subtitle {
+  font-size: 1.15rem;
+  font-weight: 500;
+  color: var(--text-main);
+  margin-bottom: 12px;
+}
+
+.digital-title-link {
+  color: var(--text-main);
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  transition: opacity 0.2s ease;
+}
+
+.digital-title-link:hover {
+  opacity: 0.7;
+}
+
+.digital-box {
+  background-color: #ffffff;
+  padding: 16px;
+  border-radius: var(--radius-card);
+}
+
+/* Textos de decibelios debajo de la foto de colores */
+.hush-color-labels-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  width: 100%;
+  margin-top: 14px;
+}
+
+.color-text-item {
+  font-size: 1.05rem;
+  line-height: 1.45;
+  color: var(--text-main);
+  font-weight: 400;
+}
+
+/* Códigos QR pegados y con esquinas redondeadas */
+.qr-box {
+  margin-top: 8px; /* Reducido al mínimo para que quede pegado a la foto */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.qr-box img {
+  width: 160px;
+  height: 160px;
+  object-fit: contain;
+  display: block;
+  border-radius: 14px; /* Esquinas redondeadas */
+}
+
+/* Responsive para los textos de decibelios en móvil */
+@media (max-width: 768px) {
+  .hush-color-labels-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+}
+
+/* Enlace a siguiente proyecto */
+.next-project-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  text-align: center;
+  padding-top: 96px;
+  padding-bottom: 24px;
+  margin: 0;
+}
+
+.next-project-link {
+  font-size: 1.15rem;
+  font-weight: 400;
+  color: var(--text-main);
+  text-decoration: underline;
+  text-underline-offset: 6px;
+  transition: opacity 0.2s ease;
+  display: inline-block;
+}
+
+.next-project-link:hover {
+  opacity: 0.7;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .project-case-study {
+    padding-top: 7rem;
+    gap: 20px;
+  }
+
+  .project-split-row,
+  .hush-digital-showcase {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .split-col,
+  .col-one-third,
+  .col-two-thirds {
+    flex: 1 1 100%;
+    width: 100%;
+  }
+
+  .qr-box img {
+    width: 130px;
+    height: 130px;
+  }
+}
+
+/* Ajuste de pliegos de revista abiertos */
+.project-full-row .project-image-box {
+  width: 100%;
+  border-radius: var(--radius-card);
+  overflow: hidden;
+  background-color: transparent;
+}
+
+.project-full-row .project-image-box img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: var(--radius-card);
+}
+
+
+/* Fila dividida en 3 columnas iguales con separación exacta de 20px */
+.project-three-row {
+  display: flex;
+  gap: 20px;
+  width: 100%;
+  align-items: flex-start;
+}
+
+.three-col {
+  flex: 1 1 calc((100% - 40px) / 3);
+  display: flex;
+  flex-direction: column;
+}
+
+/* Responsive móvil para 3 columnas */
+@media (max-width: 768px) {
+  .project-three-row {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .three-col {
+    flex: 1 1 100%;
+    width: 100%;
+  }
+}
+
+
+/* Cuadrícula 2x2 para los collages y bocetos al lado del texto */
+.experiments-mini-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  width: 100%;
+}
+
+@media (max-width: 768px) {
+  .experiments-mini-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+}
+
+
+
+/* --- MURO MASONRY / PINTEREST (EXPERIMENTS) --- */
+.experiments-masonry {
+  display: flex;
+  gap: 20px; /* Margen horizontal exacto de 20px entre las 2 columnas */
+  width: 100%;
+  align-items: flex-start;
+}
+
+.masonry-col {
+  flex: 1 1 calc(50% - 10px);
+  display: flex;
+  flex-direction: column;
+  gap: 20px; /* Margen vertical exacto de 20px entre cada imagen/bloque */
+}
+
+/* En móvil pasa a columna única manteniendo los 20px de separación */
+@media (max-width: 768px) {
+  .experiments-masonry {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .masonry-col {
+    flex: 1 1 100%;
+    width: 100%;
+  }
+}
+
+
+/* --- ESTILOS ESPECÍFICOS DE ABOUT (ORDENADOR) --- */
+.about-intro-block {
+  display: flex;
+  flex-direction: column;
+}
+
+.about-lead {
+  font-size: 1.15rem;
+  line-height: 1.6;
+  color: var(--text-main);
+  margin-bottom: 1rem;
+}
+
+.about-rest-block {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Centrado horizontal de 'See my projects' en ordenador */
+.about-cta-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin-top: 2rem;
+}
+
+.about-cta-link {
+  font-size: 1.15rem;
+  font-weight: 500;
+  color: var(--text-main);
+  text-decoration: underline;
+  text-underline-offset: 6px;
+  transition: opacity 0.2s ease;
+}
+
+.about-cta-link:hover {
+  opacity: 0.7;
+}
+
+/* --- REORDENACIÓN AUTOMÁTICA EN MÓVIL --- */
+@media (max-width: 768px) {
+  .about-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  /* Desempaqueta la columna de texto para que sus hijos se ordenen en el flex principal */
+  .about-text-col {
+    display: contents;
+  }
+
+  /* 1. Hi! + My name is Alice... arriba */
+  .about-intro-block {
+    order: 1;
+    width: 100%;
+  }
+
+  /* 2. La foto en segundo lugar */
+  .about-image-col {
+    order: 2;
+    width: 100%;
+  }
+
+  /* 3. El resto de la bio, enlaces y See my projects abajo */
+  .about-rest-block {
+    order: 3;
+    width: 100%;
+  }
+}

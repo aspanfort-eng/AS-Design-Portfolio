@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>A(S) — Portfolio</title>
+  <link rel="icon" type="image/png" href="img/favicon.png" />
+  <link rel="stylesheet" href="style.css" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <!-- Header -->
+  <header class="site-header" id="site-header">
+    <nav class="nav-center" aria-label="Main Navigation">
+      <a href="projects.html" class="nav-link">Projects</a>
+      <a href="#" class="brand-logo" aria-label="Back to top">A(S)</a>
+      <a href="about.html" class="nav-link">About</a>
+    </nav>
+  </header>
+
+  <main id="main-content">
+    
+    <!-- Hero / Intro -->
+    <section class="hero-section" aria-label="Introduction">
+      <h1 class="hero-title">Alice (Spanninga)</h1>
+      <p class="hero-subtitle">
+        Portfolio of an industrial and graphic design student<br />
+        at the University of Barcelona.
+      </p>
+    </section>
+
+    <!-- Mosaic Layout con Enlaces a Proyectos -->
+    <section class="mosaic-container" aria-label="Selected works showcase">
+
+      <!-- Fila 1: Hush lamp y Post-Data (50% / 50%) -->
+      <div class="mosaic-row row-equal">
+        <a href="hush.html" class="card card-link" aria-label="View Hush: Noise-Aware Desk Light project">
+          <img src="img/home/home-hush.jpg" alt="Hush noise-aware desk light" loading="lazy" />
+        </a>
+        <a href="post-data.html" class="card card-link" aria-label="View Post-Data: Guide & Postcard project">
+          <img src="img/home/home-postdata.jpg" alt="Post-Data Colosseum postcards and guide" loading="lazy" />
+        </a>
+      </div>
+
+      <!-- Fila 2: Dos apiladas a la izquierda + Fahrenheit 451 grande a la derecha -->
+      <div class="mosaic-row row-asymmetric-split">
+        <div class="col-stacked">
+          <a href="ashtray.html" class="card card-link" aria-label="View Ashtray: Magazine Layout project">
+            <img src="img/home/home-pagina-ashtray.jpg" alt="Editorial typography cover on cigarette butt pollution" loading="lazy" />
+          </a>
+          <a href="experiments.html" class="card card-link" aria-label="View Experiments project">
+            <img src="img/home/home-confusion-experiments.jpg" alt="Illustrated character exploration" loading="lazy" />
+          </a>
+        </div>
+        <div class="col-single">
+          <a href="dystopia-series.html" class="card card-link h-full" aria-label="View The Dystopia Series project">
+            <img src="img/home/home-dystopia.jpg" alt="Fahrenheit 451 dystopia series book cover" loading="lazy" />
+          </a>
+        </div>
+      </div>
+      <!-- Fila 3 -->
+<div class="mosaic-row">
+  <a href="interrail.html" class="card card-link card-interrail-fan" aria-label="View Interrail Travel Guide project">
+    <img src="img/home/home-interrail-fan.jpg" alt="Foldable Amsterdam travel booklet collection" loading="lazy" />
+  </a>
+  <a href="the-archive.html" class="card card-link card-archive" aria-label="View The Archive: Designers Index project">
+    <img src="img/home/home-archive.jpg" alt="Martino Gamper design archive index page" loading="lazy" />
+  </a>
+</div>
+
+<!-- Fila 4 -->
+<div class="mosaic-row">
+  <a href="ashtray.html" class="card card-link card-ashtray" aria-label="View Ashtray: Magazine Layout project">
+    <img src="img/home/home-ashtray.jpg" alt="Ashtray magazine editorial spread" loading="lazy" />
+  </a>
+  <a href="ub-folder.html" class="card card-link card-ubfolder" aria-label="View Metamorfosi i Vestigis: UB Folder project">
+    <img src="img/home/home-ubfolder.jpg" alt="Metamorfosi i Vestigis University of Barcelona folder competition" loading="lazy" />
+  </a>
+</div>
+
+<!-- Fila 5 -->
+<div class="mosaic-row">
+  <a href="experiments.html" class="card card-link card-print-exp" aria-label="View Experiments project">
+    <img src="img/home/home-print-experiments.jpg" alt="Visual print experiments and artistic compositions" loading="lazy" />
+  </a>
+  <a href="festa-major.html" class="card card-link card-santpere" aria-label="View Festa Major de Sant Pere poster project">
+    <img src="img/home/home-santpere.jpg" alt="Festa Major de Sant Pere de Vilamajor 2024 poster" loading="lazy" />
+  </a>
+</div>
+
+   
+
+      <!-- Fila 6: Interrail a la izquierda + Dos imágenes apiladas a la derecha -->
+      <div class="mosaic-row row-last-block">
+        <div class="col-interrail-wide">
+          <a href="interrail.html" class="card card-link h-full" aria-label="View Interrail Travel Guide project">
+            <img src="img/home/home-interrail.jpg" alt="Interrail journey city cards" loading="lazy" />
+          </a>
+        </div>
+        <div class="col-right-stacked">
+          <a href="hush.html" class="card card-link" aria-label="View Hush: Noise-Aware Desk Light project">
+            <img src="img/home/home-hush-prototype.jpg" alt="Hush desk lamp scale prototype model" loading="lazy" />
+          </a>
+          <a href="experiments.html" class="card card-link" aria-label="View Experiments project">
+            <img src="img/home/home-experiments.jpg" alt="Graphic and product design experiments archive" loading="lazy" />
+          </a>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- View all projects -->
+    <div class="view-all-wrapper">
+      <a href="projects.html" class="view-all-link">View all projects</a>
+    </div>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="footer-spacer-top"></div>
+    <div class="footer-inner">
+      <span class="footer-role">Design Student</span>
+      <span class="footer-logo">A(S)</span>
+      <a href="https://instagram.com/alice_.dsg" target="_blank" rel="noopener noreferrer" class="footer-social">
+        @alice_.dsg
+      </a>
+    </div>
+    <div class="footer-spacer-bottom"></div>
+  </footer>
+
+  <script>
+    let lastScrollY = window.pageYOffset;
+    const header = document.getElementById('site-header');
+
+    window.addEventListener('scroll', () => {
+      const currentScrollY = window.pageYOffset;
+
+      if (currentScrollY <= 80) {
+        header.classList.remove('nav-hidden');
+      } else if (currentScrollY > lastScrollY) {
+        header.classList.add('nav-hidden');
+      } else {
+        header.classList.remove('nav-hidden');
+      }
+      lastScrollY = currentScrollY;
+    });
+  </script>
+
+</body>
+</html>
