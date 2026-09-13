@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Post-Data: Guide & Postcard — A(S)</title>
+  <link rel="icon" type="image/png" href="img/favicon.png" />
+  <link rel="stylesheet" href="style.css" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+ <!-- Header: Projects activo (negro) y A(S) en color azul suave -->
+  <header class="site-header" id="site-header">
+    <nav class="nav-center" aria-label="Main Navigation">
+      <a href="projects.html" class="nav-link nav-active" aria-current="page">Projects</a>
+      <a href="index.html" class="brand-logo brand-subpage" aria-label="Go to Home">A(S)</a>
+      <a href="about.html" class="nav-link">About</a>
+    </nav>
+  </header>
+
+  <main id="main-content">
+
+    <article class="project-case-study" aria-label="Post-Data Case Study">
+
+      <!-- Encabezado centrado -->
+      <header class="project-header-block text-center">
+        <h1 class="project-detail-title">Post-Data: Guide &amp; Postcard</h1>
+        <p class="project-year">2026</p>
+        <p class="project-category">University Project</p>
+      </header>
+
+      <!-- Fila 1: Imagen general de portada -->
+      <div class="project-full-row">
+        <div class="project-image-box">
+          <img src="img/post-data/post-data.jpg" alt="Post-Data collection overview showing multiple postcards and city guides" loading="lazy" />
+        </div>
+      </div>
+
+      <!-- Fila 2: Texto 1 + Trasera a la izquierda | Frontal + Texto 2 a la derecha -->
+      <div class="project-split-row">
+        
+        <!-- Columna izquierda -->
+        <div class="split-col">
+          <p class="project-text">
+            Post-Data was born from the intersection between a traditional postcard and a travel guide. It is a product that provides essential information about a historical landmark while leaving a dedicated space on the right side for your personal impressions and thoughts, creating a truly unique and personalized souvenir.
+          </p>
+          <div class="project-image-box">
+            <img src="img/post-data/back-postdata.jpg" alt="Post-Data Colosseum back side with history and impressions area" loading="lazy" />
+          </div>
+        </div>
+
+        <!-- Columna derecha -->
+        <div class="split-col">
+          <div class="project-image-box">
+            <img src="img/post-data/front-postdata.jpg" alt="Post-Data Colosseum front cover card" loading="lazy" />
+          </div>
+          <p class="project-text">
+            After analyzing the essential elements of both objects, I arrived at a functional visual solution: a scalable visual identity. This design system can easily be adapted to different cities and landmarks, allowing the project to grow into a broader collection.
+          </p>
+        </div>
+
+      </div>
+
+      <!-- Fila 3: Colección ampliada -->
+      <div class="project-full-row">
+        <div class="project-image-box">
+          <img src="img/post-data/broader-collection.jpg" alt="Post-Data collection extended to Tour Eiffel and Tower Bridge cards" loading="lazy" />
+        </div>
+      </div>
+
+      <!-- Enlace al siguiente proyecto -->
+      <div class="next-project-container">
+        <a href="hush.html" class="next-project-link">&rarr; See next project...</a>
+      </div>
+
+    </article>
+
+  </main>
+
+  <!-- Footer (#E8EDFF) -->
+  <footer class="site-footer">
+    <div class="footer-spacer-top"></div>
+    <div class="footer-inner">
+      <span class="footer-role">Design Student</span>
+      <span class="footer-logo">A(S)</span>
+      <a href="https://instagram.com/alice_.dsg" target="_blank" rel="noopener noreferrer" class="footer-social">
+        @alice_.dsg
+      </a>
+    </div>
+    <div class="footer-spacer-bottom"></div>
+  </footer>
+
+  <script>
+    let lastScrollY = window.pageYOffset;
+    const header = document.getElementById('site-header');
+
+    window.addEventListener('scroll', () => {
+      const currentScrollY = window.pageYOffset;
+      if (currentScrollY <= 80) {
+        header.classList.remove('nav-hidden');
+      } else if (currentScrollY > lastScrollY) {
+        header.classList.add('nav-hidden');
+      } else {
+        header.classList.remove('nav-hidden');
+      }
+      lastScrollY = currentScrollY;
+    });
+  </script>
+
+</body>
+</html>

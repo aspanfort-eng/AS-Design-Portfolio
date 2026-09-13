@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Metamorphosis and Vestiges: UB Folder — A(S)</title>
+  <link rel="icon" type="image/png" href="img/favicon.png" />
+  <link rel="stylesheet" href="style.css" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <!-- Header -->
+  <header class="site-header" id="site-header">
+    <nav class="nav-center" aria-label="Main Navigation">
+      <a href="projects.html" class="nav-link nav-active" aria-current="page">Projects</a>
+      <a href="index.html" class="brand-logo brand-subpage" aria-label="Go to Home">A(S)</a>
+      <a href="about.html" class="nav-link">About</a>
+    </nav>
+  </header>
+
+  <main id="main-content">
+
+    <article class="project-case-study" aria-label="UB Folder Project Case Study">
+
+      <!-- Encabezado centrado -->
+      <header class="project-header-block text-center">
+        <h1 class="project-detail-title">Metamorphosis and Vestiges:<br />UB Folder</h1>
+        <p class="project-year">2025</p>
+        <p class="project-category">Competition Project</p>
+      </header>
+
+      <!-- 1. Hero panorámico: Mockup 3D de la carpeta abierta -->
+      <div class="project-full-row">
+        <div class="project-image-box">
+          <img src="img/ub-folder/ub-folder.jpg" alt="3D mockup of the open Metamorphosis and Vestiges UB folder" loading="lazy" />
+        </div>
+      </div>
+
+      <!-- 2. Bloque: Texto explicativo a la izquierda + Carpeta en plano a la derecha -->
+      <div class="project-split-row">
+        <div class="split-col">
+          <p class="project-text">
+            Finalist in the University of Barcelona's folder design competition for the 2025-2026 academic year.
+          </p>
+          <p class="project-text">
+            This proposal, titled Metamorphosis and Vestiges, reflects on the 575 years of UB's history by analyzing its visual identity over time, its logos, symbols, and meanings, and merging them into a single design. Some symbols have endured, while others have evolved.
+          </p>
+          <p class="project-text">
+            The final composition represents a visual "metamorphosis" that connects the university's legacy with innovation.
+          </p>
+        </div>
+
+        <div class="split-col">
+          <div class="project-image-box">
+            <img src="img/ub-folder/ub-original.jpg" alt="Flat layout design of the Metamorphosis and Vestiges folder artwork" loading="lazy" />
+          </div>
+        </div>
+      </div>
+
+      <!-- 3. Mapa conceptual y desglose del escudo -->
+      <div class="project-full-row">
+        <div class="project-image-box">
+          <img src="img/ub-folder/ub-mindmap.jpg" alt="Conceptual research mind map analyzing historical UB shields, Latin mottos and color palettes" loading="lazy" />
+        </div>
+      </div>
+
+      <!-- Enlace al siguiente proyecto -->
+      <div class="next-project-container">
+        <a href="festa-major.html" class="next-project-link">&rarr; See next project...</a>
+      </div>
+
+    </article>
+
+  </main>
+
+  <!-- Footer (#E8EDFF) -->
+  <footer class="site-footer">
+    <div class="footer-spacer-top"></div>
+    <div class="footer-inner">
+      <span class="footer-role">Design Student</span>
+      <span class="footer-logo">A(S)</span>
+      <a href="https://instagram.com/alice_.dsg" target="_blank" rel="noopener noreferrer" class="footer-social">
+        @alice_.dsg
+      </a>
+    </div>
+    <div class="footer-spacer-bottom"></div>
+  </footer>
+
+  <script>
+    let lastScrollY = window.pageYOffset;
+    const header = document.getElementById('site-header');
+
+    window.addEventListener('scroll', () => {
+      const currentScrollY = window.pageYOffset;
+      if (currentScrollY <= 80) {
+        header.classList.remove('nav-hidden');
+      } else if (currentScrollY > lastScrollY) {
+        header.classList.add('nav-hidden');
+      } else {
+        header.classList.remove('nav-hidden');
+      }
+      lastScrollY = currentScrollY;
+    });
+  </script>
+
+</body>
+</html>
