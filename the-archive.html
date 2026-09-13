@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Archive: Designers Index — A(S)</title>
+  <link rel="icon" type="image/png" href="img/favicon.png" />
+  <link rel="stylesheet" href="style.css" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <!-- Header: Projects activo en negro y A(S) en azul -->
+  <header class="site-header" id="site-header">
+    <nav class="nav-center" aria-label="Main Navigation">
+      <a href="projects.html" class="nav-link nav-active" aria-current="page">Projects</a>
+      <a href="index.html" class="brand-logo brand-subpage" aria-label="Go to Home">A(S)</a>
+      <a href="about.html" class="nav-link">About</a>
+    </nav>
+  </header>
+
+  <main id="main-content">
+
+    <article class="project-case-study" aria-label="The Archive Project Case Study">
+
+      <!-- Encabezado centrado -->
+      <header class="project-header-block text-center">
+        <h1 class="project-detail-title">The Archive: Designers Index</h1>
+        <p class="project-year">2026</p>
+        <p class="project-category">Personal Project</p>
+      </header>
+
+      <!-- 1. Hero panorámico: Tres fichas sobre fondo azul -->
+      <div class="project-full-row">
+        <div class="project-image-box">
+          <img src="img/the-archive/archive.jpg" alt="Designers index cards for Martino Gamper, Irma Boom and Toni Zuccheri on blue background" loading="lazy" />
+        </div>
+      </div>
+
+      <!-- 2. Bloque: Texto descriptivo a la izquierda + Ficha de Martino Gamper a la derecha -->
+      <div class="project-split-row">
+        <div class="split-col">
+          <p class="project-text">
+            This personal project began as a way to actively research innovative designers, ultimately evolving into an ongoing, personal archive that I can return to whenever I need inspiration.
+          </p>
+          <p class="project-text">
+            To manage this growing collection, I designed a clean, standardized layout that balances a brief biography with a personal selection of the designer's work. By establishing a highly functional and simple grid system, the visual structure is already resolved. This allows me to focus entirely on the research, curation, and analysis of each new profile, rather than redesigning the layout every time I want to learn about a new reference.
+          </p>
+        </div>
+
+        <div class="split-col">
+          <div class="project-image-box">
+            <img src="img/the-archive/archive-martino.jpg" alt="Editorial archival card layout dedicated to Martino Gamper" loading="lazy" />
+          </div>
+        </div>
+      </div>
+
+      <!-- 3. Mockup de las tres fichas en fila -->
+      <div class="project-full-row">
+        <div class="project-image-box">
+          <img src="img/the-archive/archive-simple-mockup.jpg" alt="Three editorial archive sheets arranged side by side" loading="lazy" />
+        </div>
+      </div>
+
+      <!-- Enlace al siguiente proyecto: experiments.html -->
+      <div class="next-project-container">
+        <a href="experiments.html" class="next-project-link">&rarr; See next project...</a>
+      </div>
+
+    </article>
+
+  </main>
+
+  <!-- Footer (#E8EDFF) -->
+  <footer class="site-footer">
+    <div class="footer-spacer-top"></div>
+    <div class="footer-inner">
+      <span class="footer-role">Design Student</span>
+      <span class="footer-logo">A(S)</span>
+      <a href="https://instagram.com/alice_.dsg" target="_blank" rel="noopener noreferrer" class="footer-social">
+        @alice_.dsg
+      </a>
+    </div>
+    <div class="footer-spacer-bottom"></div>
+  </footer>
+
+  <script>
+    let lastScrollY = window.pageYOffset;
+    const header = document.getElementById('site-header');
+
+    window.addEventListener('scroll', () => {
+      const currentScrollY = window.pageYOffset;
+      if (currentScrollY <= 80) {
+        header.classList.remove('nav-hidden');
+      } else if (currentScrollY > lastScrollY) {
+        header.classList.add('nav-hidden');
+      } else {
+        header.classList.remove('nav-hidden');
+      }
+      lastScrollY = currentScrollY;
+    });
+  </script>
+
+</body>
+</html>

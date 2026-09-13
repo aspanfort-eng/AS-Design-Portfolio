@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Projects — A(S)</title>
+  <link rel="icon" type="image/png" href="img/favicon.png" />
+  <link rel="stylesheet" href="style.css" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <!-- Header -->
+  <header class="site-header" id="site-header">
+    <nav class="nav-center" aria-label="Main Navigation">
+      <a href="projects.html" class="nav-link nav-active" aria-current="page">Projects</a>
+      <a href="index.html" class="brand-logo brand-subpage" aria-label="Go to Home">A(S)</a>
+      <a href="about.html" class="nav-link">About</a>
+    </nav>
+  </header>
+
+  <main id="main-content">
+    
+    <!-- Catálogo de 9 proyectos -->
+    <section class="projects-catalog-container" aria-label="Projects list">
+      <div class="projects-catalog-grid">
+
+        <!-- 1. Post-Data -->
+        <article class="catalog-item">
+          <a href="post-data.html" class="catalog-link">
+            <div class="card">
+              <img src="img/projects-about/projects-post-data.jpg" alt="Post-Data: Guide & Postcard" loading="lazy" />
+            </div>
+            <h2 class="catalog-title">Post-Data:<br />Guide &amp; Postcard</h2>
+          </a>
+        </article>
+
+        <!-- 2. Hush -->
+        <article class="catalog-item">
+          <a href="hush.html" class="catalog-link">
+            <div class="card">
+              <img src="img/projects-about/projects-hush.jpg" alt="Hush: Noise-Aware Desk Light" loading="lazy" />
+            </div>
+            <h2 class="catalog-title">Hush: Noise-Aware Desk Light</h2>
+          </a>
+        </article>
+
+        <!-- 3. Ashtray -->
+        <article class="catalog-item">
+          <a href="ashtray.html" class="catalog-link">
+            <div class="card">
+              <img src="img/projects-about/projects-ashtray.jpg" alt="Ashtray: Magazine Layout" loading="lazy" />
+            </div>
+            <h2 class="catalog-title">Ashtray: Magazine Layout</h2>
+          </a>
+        </article>
+
+        <!-- 4. The Dystopia Series -->
+        <article class="catalog-item">
+          <a href="dystopia-series.html" class="catalog-link">
+            <div class="card">
+              <img src="img/projects-about/projects-dystopia.jpg" alt="The Dystopia Series: Cover Book Design" loading="lazy" />
+            </div>
+            <h2 class="catalog-title">The Dystopia Series:<br />Cover Book Design</h2>
+          </a>
+        </article>
+
+        <!-- 5. Metamorfosi i Vestigis -->
+        <article class="catalog-item">
+          <a href="ub-folder.html" class="catalog-link">
+            <div class="card">
+              <img src="img/projects-about/projects-ubfolder.jpg" alt="Metamorfosi i Vestigis: UB Folder" loading="lazy" />
+            </div>
+            <h2 class="catalog-title">Metamorfosi i Vestigis:<br />UB Folder</h2>
+          </a>
+        </article>
+
+        <!-- 6. Festa Major de Sant Pere -->
+        <article class="catalog-item">
+          <a href="festa-major.html" class="catalog-link">
+            <div class="card">
+              <img src="img/projects-about/projects-festa-major.jpg" alt="Festa Major de Sant Pere: Poster" loading="lazy" />
+            </div>
+            <h2 class="catalog-title">Festa Major de Sant Pere:<br />Poster</h2>
+          </a>
+        </article>
+
+        <!-- 7. Interrail Travel Guide -->
+        <article class="catalog-item">
+          <a href="interrail.html" class="catalog-link">
+            <div class="card">
+              <img src="img/projects-about/projects-interrail.jpg" alt="Interrail Travel Guide" loading="lazy" />
+            </div>
+            <h2 class="catalog-title">Interrail Travel Guide</h2>
+          </a>
+        </article>
+
+        <!-- 8. The Archive -->
+        <article class="catalog-item">
+          <a href="the-archive.html" class="catalog-link">
+            <div class="card">
+              <img src="img/projects-about/projects-archive.jpg" alt="The Archive: Designers Index" loading="lazy" />
+            </div>
+            <h2 class="catalog-title">The Archive:<br />Designers Index</h2>
+          </a>
+        </article>
+
+        <!-- 9. Experiments -->
+        <article class="catalog-item">
+          <a href="experiments.html" class="catalog-link">
+            <div class="card">
+              <img src="img/projects-about/projects-experiments.jpg" alt="Experiments" loading="lazy" />
+            </div>
+            <h2 class="catalog-title">Experiments</h2>
+          </a>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- Enlace a About -->
+    <div class="view-all-wrapper">
+      <a href="about.html" class="view-all-link">Want to know more about me?</a>
+    </div>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="footer-spacer-top"></div>
+    <div class="footer-inner">
+      <span class="footer-role">Design Student</span>
+      <span class="footer-logo">A(S)</span>
+      <a href="https://instagram.com/alice_.dsg" target="_blank" rel="noopener noreferrer" class="footer-social">
+        @alice_.dsg
+      </a>
+    </div>
+    <div class="footer-spacer-bottom"></div>
+  </footer>
+
+  <script>
+    let lastScrollY = window.pageYOffset;
+    const header = document.getElementById('site-header');
+
+    window.addEventListener('scroll', () => {
+      const currentScrollY = window.pageYOffset;
+
+      if (currentScrollY <= 80) {
+        header.classList.remove('nav-hidden');
+      } else if (currentScrollY > lastScrollY) {
+        header.classList.add('nav-hidden');
+      } else {
+        header.classList.remove('nav-hidden');
+      }
+      lastScrollY = currentScrollY;
+    });
+  </script>
+
+</body>
+</html>

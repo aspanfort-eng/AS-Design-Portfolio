@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Festa Major de Sant Pere: Poster — A(S)</title>
+  <link rel="icon" type="image/png" href="img/favicon.png" />
+  <link rel="stylesheet" href="style.css" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <!-- Header -->
+  <header class="site-header" id="site-header">
+    <nav class="nav-center" aria-label="Main Navigation">
+      <a href="projects.html" class="nav-link nav-active" aria-current="page">Projects</a>
+      <a href="index.html" class="brand-logo brand-subpage" aria-label="Go to Home">A(S)</a>
+      <a href="about.html" class="nav-link">About</a>
+    </nav>
+  </header>
+
+  <main id="main-content">
+
+    <article class="project-case-study" aria-label="Festa Major Poster Project Case Study">
+
+      <!-- Encabezado centrado -->
+      <header class="project-header-block text-center">
+        <h1 class="project-detail-title">Festa Major de Sant Pere: Poster</h1>
+        <p class="project-year">2025</p>
+        <p class="project-category">Competition Project</p>
+      </header>
+
+      <!-- 1. Hero panorámico: Cartel enmarcado en la pared -->
+      <div class="project-full-row">
+        <div class="project-image-box">
+          <img src="img/festa-major/festa-major.jpg" alt="Framed poster mockup of Festa Major de Sant Pere de Vilamajor 2024" loading="lazy" />
+        </div>
+      </div>
+
+      <!-- 2. Bloque: Texto a la izquierda + Ilustración en plano a la derecha -->
+      <div class="project-split-row">
+        <div class="split-col">
+          <p class="project-text">
+            This project is the winning design for the 2024 Festa Major (Main Festival) poster contest in the town of Sant Pere de Vilamajor.
+          </p>
+          <p class="project-text">
+            My goal was to create an eye-catching, joyful illustration that authentically represents the town's spirit and cultural heritage. The composition is anchored by the town's iconic church tower and a dynamic burst of color and bold, hand-drawn typography emerges directly from the building, acting as a visual shout that announces the festival with energy and warmth.
+          </p>
+        </div>
+
+        <div class="split-col">
+          <div class="project-image-box">
+            <img src="img/festa-major/festa-original.jpg" alt="Digital illustration of Festa Major de Sant Pere de Vilamajor 2024" loading="lazy" />
+          </div>
+        </div>
+      </div>
+
+      <!-- 3. Foto de contexto: Mano sosteniendo el folleto frente a la torre -->
+      <div class="project-full-row">
+        <div class="project-image-box">
+          <img src="img/festa-major/festa-context.jpg" alt="Hand holding the printed festival program in front of the actual church tower" loading="lazy" />
+        </div>
+      </div>
+
+      <!-- Enlace al siguiente proyecto -->
+      <div class="next-project-container">
+        <a href="interrail.html" class="next-project-link">&rarr; See next project...</a>
+      </div>
+
+    </article>
+
+  </main>
+
+  <!-- Footer (#E8EDFF) -->
+  <footer class="site-footer">
+    <div class="footer-spacer-top"></div>
+    <div class="footer-inner">
+      <span class="footer-role">Design Student</span>
+      <span class="footer-logo">A(S)</span>
+      <a href="https://instagram.com/alice_.dsg" target="_blank" rel="noopener noreferrer" class="footer-social">
+        @alice_.dsg
+      </a>
+    </div>
+    <div class="footer-spacer-bottom"></div>
+  </footer>
+
+  <script>
+    let lastScrollY = window.pageYOffset;
+    const header = document.getElementById('site-header');
+
+    window.addEventListener('scroll', () => {
+      const currentScrollY = window.pageYOffset;
+      if (currentScrollY <= 80) {
+        header.classList.remove('nav-hidden');
+      } else if (currentScrollY > lastScrollY) {
+        header.classList.add('nav-hidden');
+      } else {
+        header.classList.remove('nav-hidden');
+      }
+      lastScrollY = currentScrollY;
+    });
+  </script>
+
+</body>
+</html>
