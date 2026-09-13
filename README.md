@@ -32,7 +32,6 @@ A custom, responsive portfolio created from scratch to archive and showcase acad
 
 ## Contact
 * **Instagram:** [@alice_.dsg](https://instagram.com/alice_.dsg)
-* **Behance:** [Alice Spanninga](https://www.behance.net/alicespanninga)
 * **Email:** aspanfort@gmail.com
 
 ---
