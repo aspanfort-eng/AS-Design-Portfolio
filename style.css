@@ -1094,3 +1094,17 @@ a:focus-visible {
     width: 100%;
   }
 }
+
+/* --- ENLACES INTERNOS DENTRO DE TEXTO DE PROYECTO --- */
+.project-inline-link {
+  color: var(--text-main);
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  font-weight: 500;
+  transition: opacity 0.2s ease;
+  white-space: nowrap; /* Evita que la flecha se separe de la palabra 'here' */
+}
+
+.project-inline-link:hover {
+  opacity: 0.6;
+}
