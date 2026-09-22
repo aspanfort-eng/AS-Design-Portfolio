@@ -2,7 +2,7 @@
 
 Personal design portfolio website of **Alice Spanninga**, design student at the University of Barcelona.
 
-🌐 **Live Website:** [https://tu-usuario.github.io/tu-repositorio/](https://tu-usuario.github.io/tu-repositorio/)
+🌐 **Live Website:** [[https://tu-usuario.github.io/t](https://aspanfort-eng.github.io/AS-Design-Portfolio/index.html))
 
 ---
 
